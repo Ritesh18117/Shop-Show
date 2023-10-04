@@ -1,0 +1,7 @@
+<div class="container" >
+    <app-serach (searchTextChange)="searchIt($event)"></app-serach>
+    <app-products-list [searched]="searched" #productListComponent ></app-products-list>
+    <div *ngIf="productListComponent.showProductDetails">
+        <app-product-details *ngIf="productListComponent.selectedProduct" [productListComp]="productListComponent" (onClose)="onProductDetailsClose();"></app-product-details>
+    </div>
+</div>
