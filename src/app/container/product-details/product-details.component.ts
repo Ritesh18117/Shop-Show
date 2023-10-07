@@ -20,7 +20,6 @@ export class ProductDetailsComponent {
   }
 
   onClosed(){
-    console.log("Hello From Details");
     this.onClose.emit();
   }
 }

@@ -12,8 +12,10 @@ import { ProductComponent } from './container/products-list/product/product.comp
 import { FormsModule } from '@angular/forms';
 import { FilterComponent } from './container/products-list/filter/filter.component';
 import { ProductDetailsComponent } from './container/product-details/product-details.component';
-import { HighlightDirective } from './customDirectives/highlight.directive';
 import { AboutComponent } from './about/about.component';
+import { FooterComponent } from './footer/footer.component';
+import { ContactComponent } from './contact/contact.component';
+import { AuthModule } from './auth/auth.module'; 
 
 @NgModule({
   declarations: [
@@ -26,13 +28,15 @@ import { AboutComponent } from './about/about.component';
     ProductComponent,
     FilterComponent,
     ProductDetailsComponent,
-    HighlightDirective,
-    AboutComponent
+    AboutComponent,
+    FooterComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent] 
