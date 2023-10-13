@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
+  user = {
+    name:"",
+    email:"",
+    query:"",
+    message:""
+  }
+
+  onSubmit(){
+    console.log(this.user);
+  }
 
 }

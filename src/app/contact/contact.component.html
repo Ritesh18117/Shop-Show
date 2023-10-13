@@ -3,21 +3,21 @@
         <div class="form">
             <h4>GET IN TOUCH</h4>
             <h2 class="form-headline">Send us a message</h2>
-            <form id="submit-form" action="">
+            <form id="submit-form" (ngSubmit)="onSubmit()">
                 <p>
-                    <input id="name" class="form-input" type="text" placeholder="Your Name*">
+                    <input id="name" name="name" [(ngModel)]="user.name" class="form-input" type="text" placeholder="Your Name*">
                     <small class="name-error"></small>
                 </p>
                 <p>
-                    <input id="email" class="form-input" type="email" placeholder="Your Email*">
+                    <input id="email" [(ngModel)]="user.email" name="email" class="form-input" type="email" placeholder="Your Email*">
                     <small class="name-error"></small>
                 </p>
                 <p class="full-width">
-                    <input id="company-name" class="form-input" type="text" placeholder="Company Name*" required>
+                    <input id="company-name" name="query" [(ngModel)]="user.query"  class="form-input" type="text" placeholder="Query*" required>
                     <small></small>
                 </p>
                 <p class="full-width">
-                    <textarea minlength="20" id="message" cols="30" rows="7" placeholder="Your Message*"
+                    <textarea minlength="20" [(ngModel)]="user.message" name="message" id="message" cols="30" rows="7" placeholder="Your Message*"
                         required></textarea>
                     <small></small>
                 </p>
@@ -26,8 +26,8 @@
                     communications by call / email about Company's services.
                 </p>
                 <p class="full-width">
-                    <input type="submit" class="submit-btn" value="Submit" onclick="checkValidations()">
-                    <button class="reset-btn" onclick="reset()">Reset</button>
+                    <input type="submit" class="submit-btn" value="Submit">
+                    <button class="reset-btn">Reset</button>
                 </p>
             </form>
         </div>

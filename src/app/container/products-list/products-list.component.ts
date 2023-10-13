@@ -8,6 +8,7 @@ import { Product } from 'src/app/Models/Product';
 })
 export class ProductsListComponent {
 
+  // For Showing in Product Details
   selectedProduct!: Product;
   showProductDetails:boolean = false;
 
@@ -538,9 +539,11 @@ export class ProductsListComponent {
     }
   ];
 
+  // Get From Search component to search 
   @Input() 
   searched:string ='';
   
+  // For Sending Data to Filter Component 
   total = this.products.length;
   inStock = this.products.filter(x => x.is_in_inventory === true).length;
   notInStock = this.products.filter(x => x.is_in_inventory === false).length;

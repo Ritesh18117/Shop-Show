@@ -16,6 +16,8 @@ import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { AuthModule } from './auth/auth.module'; 
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { AuthModule } from './auth/auth.module';
     AppRoutingModule,
     FormsModule,
     AuthModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent] 

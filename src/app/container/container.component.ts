@@ -12,7 +12,7 @@ export class ContainerComponent {
   searched:string = '';
 
   @ViewChild(ProductsListComponent) productListComponent!: ProductsListComponent;
-  // @ViewChild(ProductDetailsComponent) productDetailComponent!: ProductDetailsComponent;
+  @ViewChild(ProductDetailsComponent) productDetailComponent!: ProductDetailsComponent;
 
   searchIt(event:string){
     this.searched = event;
