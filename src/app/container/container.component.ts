@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { ProductsListComponent } from './products-list/products-list.component';
-import { ProductDetailsComponent } from './product-details/product-details.component';
+import { Product } from '../Models/Product';
+import { cardItem } from '../Models/cardItem';
 
 @Component({
   selector: 'app-container',
@@ -8,18 +9,40 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
   styleUrls: ['./container.component.css']
 })
 export class ContainerComponent {
-  
-  searched:string = '';
+
+  // For Search Component
+  searched: string = '';
+
+  // For Item add to card 
+  cardItems: cardItem[] = [];
+
+  constructor() {
+    // For storing the Card items in Local Storage
+    try {
+      localStorage.getItem('cardItems');
+    } catch {
+      localStorage.setItem('cardItems', JSON.stringify(this.cardItems));
+    }
+  }
 
   @ViewChild(ProductsListComponent) productListComponent!: ProductsListComponent;
-  @ViewChild(ProductDetailsComponent) productDetailComponent!: ProductDetailsComponent;
 
-  searchIt(event:string){
+  // For Search It 
+  searchIt(event: string) {
     this.searched = event;
     console.log(this.searched + "From Contaner");
   }
 
+  // For Closing Button in product Details Component
   onProductDetailsClose() {
     this.productListComponent.showProductDetails = false;
+  }
+
+  addItemToCard(cardItem: cardItem) {
+    let item = localStorage.getItem('cardItems');
+    this.cardItems = item ? JSON.parse(item) : [];
+    this.cardItems.push(cardItem);
+    localStorage.setItem('cardItems', JSON.stringify(this.cardItems));
+    console.log(this.cardItems);
   }
 }

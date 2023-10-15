@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ContainerComponent } from './container/container.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { CardComponent } from './container/card/card.component';
+import { authGuard } from './auth/auth.guard';
 
 const routes: Routes = [
     { path: '', component: ContainerComponent },
@@ -11,6 +13,9 @@ const routes: Routes = [
     {
       path: 'auth',
       loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+    },
+    {
+      path:'card', component:CardComponent
     },
     { path: '**', redirectTo: ''} // Wild Card Route
 ];

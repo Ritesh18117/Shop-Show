@@ -17,6 +17,8 @@ import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { AuthModule } from './auth/auth.module'; 
 import { ReactiveFormsModule } from '@angular/forms';
+import { CardComponent } from './container/card/card.component';
+import { DashboardComponent } from './container/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductDetailsComponent,
     AboutComponent,
     FooterComponent,
-    ContactComponent
+    ContactComponent,
+    CardComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

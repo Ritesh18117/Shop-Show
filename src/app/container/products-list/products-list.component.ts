@@ -11,6 +11,7 @@ export class ProductsListComponent {
   // For Showing in Product Details
   selectedProduct!: Product;
   showProductDetails:boolean = false;
+  // test:string="test";
 
   products = [
     {
