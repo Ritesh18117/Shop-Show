@@ -5,6 +5,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { CardComponent } from './container/card/card.component';
 import { authGuard } from './auth/auth.guard';
+import { DashboardComponent } from './container/dashboard/dashboard.component';
 
 const routes: Routes = [
     { path: '', component: ContainerComponent },
@@ -12,11 +13,11 @@ const routes: Routes = [
     { path: 'contact', component: ContactComponent },
     {
       path: 'auth',
-      loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+      loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
+      canActivate:[authGuard]
     },
-    {
-      path:'card', component:CardComponent
-    },
+    { path:'cart', component:CardComponent, canActivate:[authGuard] },
+    { path:'dashboard', component:DashboardComponent, canActivate:[authGuard] },
     { path: '**', redirectTo: ''} // Wild Card Route
 ];
 

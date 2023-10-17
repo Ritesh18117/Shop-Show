@@ -19,6 +19,9 @@ import { AuthModule } from './auth/auth.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CardComponent } from './container/card/card.component';
 import { DashboardComponent } from './container/dashboard/dashboard.component';
+import { ProfileComponent } from './container/dashboard/profile/profile.component';
+import { MyOrdersComponent } from './container/dashboard/my-orders/my-orders.component';
+import { MyAddressComponent } from './container/dashboard/my-address/my-address.component';
 
 
 @NgModule({
@@ -36,7 +39,10 @@ import { DashboardComponent } from './container/dashboard/dashboard.component';
     FooterComponent,
     ContactComponent,
     CardComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProfileComponent,
+    MyOrdersComponent,
+    MyAddressComponent
   ],
   imports: [
     BrowserModule,

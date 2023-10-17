@@ -13,7 +13,10 @@ export class LoginComponent {
     password:""
   }
   
+  constructor(private _authService:AuthService,private _router:Router){}
+
   onSubmit(){
-    console.log(this.user);
+    this._authService.login(this.user.email,this.user.password);
+    this._router.navigate(['/home']);
   }
 }
