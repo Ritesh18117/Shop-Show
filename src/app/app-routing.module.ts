@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ContainerComponent } from './container/container.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
-import { CardComponent } from './container/card/card.component';
+import { CardComponent } from './container/cart/cart.component';
 import { authGuard } from './auth/auth.guard';
 import { DashboardComponent } from './container/dashboard/dashboard.component';
 

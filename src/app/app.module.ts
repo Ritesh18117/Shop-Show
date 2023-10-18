@@ -17,7 +17,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { AuthModule } from './auth/auth.module'; 
 import { ReactiveFormsModule } from '@angular/forms';
-import { CardComponent } from './container/card/card.component';
+import { CardComponent } from './container/cart/cart.component';
 import { DashboardComponent } from './container/dashboard/dashboard.component';
 import { ProfileComponent } from './container/dashboard/profile/profile.component';
 import { MyOrdersComponent } from './container/dashboard/my-orders/my-orders.component';

@@ -1,8 +1,9 @@
 <div class="container" style="min-height: 80vh;">
     <div class="row m-4">
         <div class="col-md-8 border" >
+            <h2>Your Cart</h2>
             <!-- 80% width -->
-            <div class="row border" *ngFor="let item of cardItems;">
+            <div class="row border" *ngFor="let item of cardItems; let i=index;">
                 <div class="col-md-3 mt-4 m-3">
                     <img src="{{item.product.imageURL}}" class="img-fluid">
                 </div>
@@ -16,8 +17,9 @@
                         Delivary Expected 10-10-2023
                     </div>
                     <div class="">
-                        <button class="add-remove p-2"> - </button> <div class="border p-2 m-1" style="display: inline-block;">&nbsp; 1 &nbsp;</div> <button class=" add-remove p-2"> + </button>
+                        <button class="add-remove p-2" (click)="minus(i)"> - </button> <div class="border p-2 m-1" style="display: inline-block;">&nbsp; {{item.quantity}} &nbsp;</div> <button (click)="plus(i)" class=" add-remove p-2"> + </button>
                     </div>
+                    <small *ngIf="forMessage === i.toString()" class="mt-1">{{message}}</small>
                 </div>
                 
             </div>
@@ -32,7 +34,7 @@
             <div class="m-2 border-bottom">
                 <div class="price row p-2">
                     <div class="col-8 ">
-                        Price({{cardItems.length}} item)
+                        Price({{totalQuantity}} item)
                     </div>
                     <div class="col-4">
                         &nbsp; &nbsp;${{total}}

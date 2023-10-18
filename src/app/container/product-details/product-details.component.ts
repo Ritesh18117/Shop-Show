@@ -10,7 +10,7 @@ import { cardItem } from 'src/app/Models/cardItem';
 })
 export class ProductDetailsComponent {
   // Variables for card Items
-  color: string = "Default";
+  color: string = "";
   size:number = -1;
 
   // For added In card alter
@@ -52,20 +52,30 @@ export class ProductDetailsComponent {
 
   // Add to card 
   addToCard(){
+
     if (!this.cardItem) {
-      this.cardItem = new cardItem(this.product, '', -1); 
+      this.cardItem = new cardItem(this.product, '', -1,0); 
     }
 
-    if(this.color){
+    if(this.color != ""){
       if(this.size !== -1){
-        this.cardItem.product = this.product;
-        this.cardItem.color = this.color;
-        this.cardItem.size = this.size;
-        this.addItemToCard.emit(this.cardItem);
-        this.message = 'Product Added!!';
-        setTimeout(() => {
-          this.message = '';
-        }, 2000);
+
+        if(localStorage.getItem("isLoggedIn") === null){
+          this.message = 'Please Login First!!!';
+          setTimeout(() => {
+            this.message = '';
+          }, 2000);
+        }else{
+          this.cardItem.product = this.product;
+          this.cardItem.color = this.color;
+          this.cardItem.size = this.size;
+          this.cardItem.quantity = 1;
+          this.addItemToCard.emit(this.cardItem);
+          this.message = 'Product Added!!';
+          setTimeout(() => {
+            this.message = '';
+          }, 2000);
+        }
       }
       else{
         this.message = 'Please Select Size!!';
