@@ -15,7 +15,8 @@ export class MyAddressComponent {
     address2:"",
     city:"",
     state:"",
-    zipcode:""
+    zipcode:"",
+    phone:""
   }
 
   myAddress: Address[] = [];
@@ -30,7 +31,7 @@ export class MyAddressComponent {
         localStorage.setItem('myAddress','');
       }
     } catch (error) {
-      console.log("Address parsing Error")
+      console.log("Address parsing Error");
     }
   }
   

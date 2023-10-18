@@ -6,6 +6,7 @@ import { ContactComponent } from './contact/contact.component';
 import { CardComponent } from './container/cart/cart.component';
 import { authGuard } from './auth/auth.guard';
 import { DashboardComponent } from './container/dashboard/dashboard.component';
+import { PlaceOrderComponent } from './container/place-order/place-order.component';
 
 const routes: Routes = [
     { path: '', component: ContainerComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
     },
     { path:'cart', component:CardComponent, canActivate:[authGuard] },
     { path:'dashboard', component:DashboardComponent, canActivate:[authGuard] },
+    { path:'placeOrder', component:PlaceOrderComponent, canActivate:[authGuard] },
     { path: '**', redirectTo: ''} // Wild Card Route
 ];
 

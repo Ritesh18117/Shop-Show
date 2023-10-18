@@ -4,7 +4,7 @@
         <div class="col-sm-6 mb-2" *ngFor="let address of myAddress; let i=index">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">{{address.firstname}}&nbsp;{{address.lastname}}</h5>
+                    <h5 class="card-title">{{address.firstname}}&nbsp;{{address.lastname}} &nbsp; &nbsp; &nbsp; {{address.phone}}</h5>
                     <p class="card-text">Address : {{address.address}}&nbsp;
                         {{address.address2}}&nbsp;
                         {{address.city}}&nbsp;
@@ -17,14 +17,20 @@
         </div>
     </div>
     
-    <form class="mt-5 border p-3" (ngSubmit)="onSubmit()">
+    <form id="myForm" class="mt-5 border p-3" (ngSubmit)="onSubmit()">
         <h2>Add Address</h2>
         <div class="row m-3">
-            <div class="col-5">
+            <div class="col-md-6">
                 <input type="text" name="firstName" [(ngModel)]="address.firstname" class="form-control form-control-lg" id="colFormLabelLg" placeholder="First Name">
             </div>
-            <div class="col-5">
+            <div class="col-md-6">
                 <input type="text" name="lastName" [(ngModel)]="address.lastname" class="form-control form-control-lg" id="colFormLabelLg" placeholder="Last Name">
+            </div>
+        </div>
+        <div class="row m-3">
+            <div class="col-md-6">
+                <label for="address" class="mb-1">Phone</label>
+                <input type="text" name="phone" [(ngModel)]="address.phone" class="form-control form-control-lg" id="colFormLabelLg" placeholder="*******557">
             </div>
         </div>
         <div class="form-group m-3">

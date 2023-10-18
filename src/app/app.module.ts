@@ -22,6 +22,7 @@ import { DashboardComponent } from './container/dashboard/dashboard.component';
 import { ProfileComponent } from './container/dashboard/profile/profile.component';
 import { MyOrdersComponent } from './container/dashboard/my-orders/my-orders.component';
 import { MyAddressComponent } from './container/dashboard/my-address/my-address.component';
+import { PlaceOrderComponent } from './container/place-order/place-order.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { MyAddressComponent } from './container/dashboard/my-address/my-address.
     DashboardComponent,
     ProfileComponent,
     MyOrdersComponent,
-    MyAddressComponent
+    MyAddressComponent,
+    PlaceOrderComponent
   ],
   imports: [
     BrowserModule,

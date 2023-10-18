@@ -1,0 +1,35 @@
+<div class="container border p-4 mt-4">
+    <h2>My Orders</h2>
+    <div class="mt-4 border p-3 d-flex">
+        <div class="detail col-md-9">
+            Product Name <br>
+            Delivery Date : 20-10-2023 <br>
+            Status : Delivary Pending
+        </div>
+        <div class="detail col-md-2">
+            <img src="../../../../assets/aboutCard3.jpg" class="img-fluid">
+        </div>
+    </div>
+    <div class="border p-3">
+        <h4>Delivary Address</h4>
+        <form class="p-3">
+            <div class="form-check" *ngFor="let address of myAddress; let i=index">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                <label class="form-check-label" for="flexRadioDefault1">
+                    <div class="card">
+                        <h5 class="card-header">{{address.firstname}}&nbsp;{{address.lastname}} &nbsp; &nbsp; &nbsp; {{address.phone}}</h5>
+                        <div class="card-body">
+                            <p class="card-text">{{address.address}}&nbsp;
+                                {{address.address2}}&nbsp;
+                                {{address.city}}&nbsp;
+                                {{address.state}}&nbsp;
+                                {{address.zipcode}}
+                            </p>
+                            <a routerLink="" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </label> <br>
+            </div>
+        </form>
+    </div>
+</div>

@@ -7,6 +7,7 @@ export class Address{
     city:string;
     state:string;
     zipcode:string;
+    phone:string;
     constructor(
         firstname:string,
         lastname:string,
@@ -14,7 +15,8 @@ export class Address{
         address2:string,
         city:string,
         state:string,
-        zipcode:string){
+        zipcode:string,
+        phone:string){
 
         this.firstname = firstname;
         this.lastname = lastname;
@@ -23,5 +25,6 @@ export class Address{
         this.city = city;
         this.state = state;
         this.zipcode = zipcode;
+        this.phone = phone;
     }
 }
