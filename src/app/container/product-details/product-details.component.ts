@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from 'src/app/Models/Product';
 import { ProductsListComponent } from '../products-list/products-list.component';
 import { cardItem } from 'src/app/Models/cardItem';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-product-details',
@@ -9,12 +10,12 @@ import { cardItem } from 'src/app/Models/cardItem';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent {
+
+  constructor(private toastr: ToastrService) { }
   // Variables for card Items
   color: string = "";
   size:number = -1;
 
-  // For added In card alter
-  message:string = ""
 
   @Input() productListComp!: ProductsListComponent;
 
@@ -52,6 +53,7 @@ export class ProductDetailsComponent {
 
   // Add to card 
   addToCard(){
+    
 
     if (!this.cardItem) {
       this.cardItem = new cardItem(this.product, '', -1,0); 
@@ -61,34 +63,22 @@ export class ProductDetailsComponent {
       if(this.size !== -1){
 
         if(localStorage.getItem("isLoggedIn") === null){
-          this.message = 'Please Login First!!!';
-          setTimeout(() => {
-            this.message = '';
-          }, 2000);
+          this.toastr.warning('Please Login First', 'warning');
         }else{
           this.cardItem.product = this.product;
           this.cardItem.color = this.color;
           this.cardItem.size = this.size;
           this.cardItem.quantity = 1;
           this.addItemToCard.emit(this.cardItem);
-          this.message = 'Product Added!!';
-          setTimeout(() => {
-            this.message = '';
-          }, 2000);
+          this.toastr.success('Product Added!!', 'Success');
         }
       }
       else{
-        this.message = 'Please Select Size!!';
-        setTimeout(() => {
-          this.message = '';
-        }, 2000);
+        this.toastr.warning('Please Select Size!', 'warning');
       }
     }
     else{
-      this.message = 'Please Select Color!!';
-      setTimeout(() => {
-        this.message = '';
-      }, 2000);
+      this.toastr.warning('Please Select Color!', 'warning');
     }    
   }
 }

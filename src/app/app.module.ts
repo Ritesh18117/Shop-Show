@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +27,7 @@ import { MyAddressComponent } from './container/dashboard/my-address/my-address.
 import { PlaceOrderComponent } from './container/place-order/place-order.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +47,7 @@ import { PlaceOrderComponent } from './container/place-order/place-order.compone
     ProfileComponent,
     MyOrdersComponent,
     MyAddressComponent,
-    PlaceOrderComponent
+    PlaceOrderComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,9 @@ import { PlaceOrderComponent } from './container/place-order/place-order.compone
     FormsModule,
     AuthModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent] 

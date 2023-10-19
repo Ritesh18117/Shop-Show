@@ -65,4 +65,8 @@ export class CardComponent {
     }
   }
 
+  removeItem(ind:number){
+    this.cardItems.splice(ind,1)
+    localStorage.setItem("cardItems",JSON.stringify(this.cardItems));
+  }
 }

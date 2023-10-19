@@ -16,8 +16,13 @@
                     <div class="col-5">
                         Delivary Expected 10-10-2023
                     </div>
-                    <div class="">
-                        <button class="add-remove p-2" (click)="minus(i)"> - </button> <div class="border p-2 m-1" style="display: inline-block;">&nbsp; {{item.quantity}} &nbsp;</div> <button (click)="plus(i)" class=" add-remove p-2"> + </button>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <button class="add-remove p-2" (click)="minus(i)"> - </button> <div class="border p-2 m-1" style="display: inline-block;">&nbsp; {{item.quantity}} &nbsp;</div> <button (click)="plus(i)" class=" add-remove p-2"> + </button>
+                        </div>
+                        <div class="col-md-2">
+                            <button (click)="removeItem(i)" class="mt-3 btn btn-danger">Remove</button>
+                        </div>
                     </div>
                     <small *ngIf="forMessage === i.toString()" class="mt-1">{{message}}</small>
                 </div>
