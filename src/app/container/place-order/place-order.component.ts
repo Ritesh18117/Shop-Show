@@ -9,6 +9,20 @@ import { cardItem } from 'src/app/Models/cardItem';
 })
 export class PlaceOrderComponent {
 
+  // For Address getting form
+  address:Address = {
+    firstname:"",
+    lastname:"",
+    address:"",
+    address2:"",
+    city:"",
+    state:"",
+    zipcode:"",
+    phone:""
+  }
+  // showForm Varible
+  showForm:boolean = false;
+
   myAddress: Address[] = [];
 
   cardItems:cardItem[] = [];
@@ -58,5 +72,15 @@ export class PlaceOrderComponent {
 
   selecePayment(paymentMethod:string){
     console.log(paymentMethod);
+  }
+
+  showAddressForm(){
+    this.showForm = !this.showForm
+  }
+
+  onSubmit(){
+    console.log(this.address);
+    this.myAddress.push(this.address);
+    localStorage.setItem('myAddress',JSON.stringify(this.myAddress));
   }
 }
