@@ -1,7 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { ProductsListComponent } from './products-list/products-list.component';
-import { Product } from '../Models/Product';
-import { cardItem } from '../Models/cardItem';
+import { cardItem } from 'src/app/Models/cardItem';
 
 @Component({
   selector: 'app-container',

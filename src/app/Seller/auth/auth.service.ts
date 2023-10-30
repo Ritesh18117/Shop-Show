@@ -3,14 +3,14 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class SellerAuthService {
   
   public isAuthenticated = false;
   constructor() { }
 
   login(username:string,password:string){
-    if(username === 'customer' && password === 'customer@123'){
-      localStorage.setItem("isLoggedIn","true");
+    if(username === 'seller' && password === 'seller@123'){
+      localStorage.setItem("isSellerLoggedIn","true");
       this.isAuthenticated = true;
       return true;
     }
@@ -21,7 +21,7 @@ export class AuthService {
   }
 
   logout(){
-    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("isSellerLoggedIn");
     this.isAuthenticated = false;
   }
 
