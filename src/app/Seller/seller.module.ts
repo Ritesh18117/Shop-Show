@@ -1,19 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SellerAuthModule } from './auth/auth.module';
+import { SellerDashboardComponent } from './seller-dashboard/seller-dashboard.component';
+import { SellerRoutingModule } from './seller-routing.module';
+import { ProfileComponent } from './seller-dashboard/profile/profile.component';
+import { AddShoesComponent } from './seller-dashboard/add-shoes/add-shoes.component';
+import { AddedItemsComponent } from './seller-dashboard/added-items/added-items.component';
 import { FormsModule } from '@angular/forms';
-import { dashboardModule } from './dashboard/dashboard.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { AuthModule } from '../auth/auth.module';
 
 @NgModule({
   declarations: [
-    // DashboardComponent
+    SellerDashboardComponent,
+    ProfileComponent,
+    AddShoesComponent,
+    AddedItemsComponent
   ],
   imports: [
     CommonModule,
-    FormsModule,
-    dashboardModule,
-    AuthModule
+    SellerRoutingModule,
+    SellerAuthModule,
+    FormsModule
   ]
 })
 export class SellerModule { }

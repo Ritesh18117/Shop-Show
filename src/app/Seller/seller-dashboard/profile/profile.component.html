@@ -1,0 +1,37 @@
+<h2>Company Information</h2>
+<form action="" class="mt-4" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-6">
+            <input type="text" name="companyName" [value]="profile.companyName" [(ngModel)]="profile.companyName" class="form-control form-control-lg" id="colFormLabelLg" placeholder="Company Name">
+        </div>
+        <div class="col-6">
+            <input type="text" name="companyType" [value]="profile.companyType" [(ngModel)]="profile.companyType" class="form-control form-control-lg" id="colFormLabelLg" placeholder="Type">
+        </div>
+    </div>
+    <div class="row">
+        <div class=" col-6 pt-4">
+            <h6>Website</h6>
+            <input type="email" name="website" [(ngModel)]="profile.website" class="form-control form-control-lg" id="colFormLabelLg"
+                    placeholder="show.shoes.com" [value]="profile.website">
+        </div>
+        <div class=" col-6 pt-4">
+            <h6>Company Contact</h6>
+            <input type="text" name="contact" [(ngModel)]="profile.contact" class="form-control form-control-lg" id="colFormLabelLg"
+                    placeholder="*******557" [value]="profile.contact">
+        </div>
+    </div>
+    <div class="row">
+        <div class=" col-6 pt-4">
+            <h6>GST Number</h6>
+            <input type="text" name="gst" [(ngModel)]="profile.gst" class="form-control form-control-lg" id="colFormLabelLg"
+                    placeholder="" [value]="profile.gst">
+        </div>
+        <div class=" col-6 pt-4">
+            <h6>Central Branch</h6>
+            <input type="text" name="place" [(ngModel)]="profile.place" class="form-control form-control-lg" id="colFormLabelLg"
+                    placeholder="" [value]="profile.place" >
+        </div>
+    </div>
+    
+    <button class="mt-3 btn btn-primary">Submit</button>
+</form>

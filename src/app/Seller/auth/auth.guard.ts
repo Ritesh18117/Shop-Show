@@ -3,7 +3,7 @@ import { CanActivateFn, Router} from '@angular/router';
 
 export const sellerAuthGuard: CanActivateFn = (route, state) => {
   const _router = inject(Router);
-  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  const isLoggedIn = localStorage.getItem("isSellerLoggedIn");
   const url = state.url;
 
   // For Redirecting Page to Dashboard if User if Loggedin

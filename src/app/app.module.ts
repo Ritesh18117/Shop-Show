@@ -17,7 +17,6 @@ import { ProductDetailsComponent } from './Customer/container/product-details/pr
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
-import { SellerAuthModule } from './Seller/auth/auth.module'; 
 import { AuthModule } from './auth/auth.module'; 
 import { ReactiveFormsModule } from '@angular/forms';
 import { CardComponent } from './Customer/container/cart/cart.component';
@@ -26,8 +25,7 @@ import { ProfileComponent } from './Customer/container/dashboard/profile/profile
 import { MyOrdersComponent } from './Customer/container/dashboard/my-orders/my-orders.component';
 import { MyAddressComponent } from './Customer/container/dashboard/my-address/my-address.component';
 import { PlaceOrderComponent } from './Customer/container/place-order/place-order.component';
-import { SellerRoutingModule } from './Seller/seller-routing.module';
-
+import { SellerModule } from './Seller/seller.module';
 
 
 @NgModule({
@@ -56,11 +54,10 @@ import { SellerRoutingModule } from './Seller/seller-routing.module';
     AppRoutingModule,
     FormsModule,
     AuthModule,
-    SellerAuthModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    SellerRoutingModule,
+    SellerModule,
     ToastrModule.forRoot()
   ],
   providers: [],

@@ -12,12 +12,12 @@ import { sellerAuthGuard } from './Seller/auth/auth.guard';
 const routes: Routes = [
     { path: '', component: ContainerComponent },
     { path: 'about', component: AboutComponent },
-    { path: 'contact', component: ContactComponent },
+    { path: 'contact', component: ContactComponent }, 
     {
       path: 'seller',
-      loadChildren: () => import('./Seller/auth/auth.module').then(m => m.SellerAuthModule),
+      loadChildren: () => import('./Seller/seller.module').then(m => m.SellerModule),
       canActivate: [sellerAuthGuard]
-    },    
+    }, 
     {
       path: 'auth',
       loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
