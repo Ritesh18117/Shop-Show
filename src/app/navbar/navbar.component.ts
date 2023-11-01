@@ -13,6 +13,9 @@ export class NavbarComponent {
   isSellerLoggedIn:string = "false";
   isAdminLoggedIn:string = "false";
 
+  customerNotLoggedIn: boolean = this.isSellerLoggedIn == 'false' || this.isAdminLoggedIn == 'false';
+  sellerLoggedIn:boolean = this.isLoggedIn == 'false' || this.isAdminLoggedIn == 'false'
+
 
   constructor(private _authService:AuthService, private _sellerAuthService:SellerAuthService){ }
 

@@ -18,7 +18,7 @@
         </ul>
       </div>
       <div class="collapse navbar-collapse container fs-5 flex-row-reverse" id="navbarNav">
-        <ul class="navbar-nav" *ngIf="isSellerLoggedIn == 'false' or isAdminLoggedIn == 'false'">
+        <ul class="navbar-nav" *ngIf="!customerNotLoggedIn">
           <li class="nav-item">
             <a *ngIf="isLoggedIn == 'false'" class="nav-link" routerLink="/auth/login">Login</a>
           </li>
@@ -36,7 +36,7 @@
           </li>
         </ul>
 
-        <ul class="navbar-nav" *ngIf="isLoggedIn == 'false' or isAdminLoggedIn == 'false'">
+        <ul class="navbar-nav" *ngIf="sellerLoggedIn">
           <li class="nav-item">
             <a *ngIf="isSellerLoggedIn == 'true'" class="nav-link" routerLink="/seller/dashboard">Dashobard</a>
           </li>

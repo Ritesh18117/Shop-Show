@@ -6,27 +6,47 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-shoes.component.css']
 })
 export class AddShoesComponent {
-  profile = {
-    companyName:"Show Shoes",
-    companyType:"E-commerce",
-    website:"show.shoes.com",
-    contact:"6297425557",
-    gst:"22AAAAA0000A1Z5",
-    place:"Delhi"
-  }
+  size:string = "";
+  color:string = "";
+  quantity:string = "";
 
   product = {
     brand:"",
     name:"",
+    quantity: [] as any[],
+    gender:"",
+    category:"",
+    price:0,
+    discountPrice:0,
+    imageURL:"",
+    description:"",
   }
 
-  showForm:boolean = false;
-  
-  showAddressForm(){
-    this.showForm = !this.showForm
+  addQuantity(){
+    if(this.size != "" && this.color != "" && this.quantity != ""){
+      let quan = {
+        size: this.size,
+        color:this.color,
+        quantity:this.quantity,
+      }
+      this.product.quantity.push(quan);
+      this.size = "";
+      this.color = "";
+      this.quantity = "";
+    }
   }
 
   onSubmit(){
-    console.log(this.profile);
+    console.log(this.product);
+
+    this.product.brand = "";
+    this.product.name = "";
+    this.product.quantity = [];
+    this.product.gender = "";
+    this.product.category = "";
+    this.product.price = 0;
+    this.product.discountPrice = 0;
+    this.product.imageURL = "";
+    this.product.description = "";
   }
 }
