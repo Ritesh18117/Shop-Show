@@ -18,23 +18,25 @@
         </ul>
       </div>
       <div class="collapse navbar-collapse container fs-5 flex-row-reverse" id="navbarNav">
-        <ul class="navbar-nav" *ngIf="!customerNotLoggedIn">
-          <li class="nav-item">
-            <a *ngIf="isLoggedIn == 'false'" class="nav-link" routerLink="/auth/login">Login</a>
-          </li>
-          <li class="nav-item">
-            <a *ngIf="isLoggedIn == 'false'" class="nav-link" routerLink="/auth/signup">signup</a>
-          </li>
-          <li class="nav-item">
-            <a *ngIf="isLoggedIn == 'true'" class="nav-link"  routerLink="/cart">cart</a>
-          </li>
-          <li class="nav-item">
-            <a *ngIf="isLoggedIn == 'true'" class="nav-link" routerLink="/dashboard">dashobard</a>
-          </li>
-          <li class="nav-item">
-            <a *ngIf="isLoggedIn == 'true'" class="nav-link" routerLink="" (click)="logout()">Logout</a>
-          </li>
-        </ul>
+        <div *ngIf="customerNotLoggedIn">
+          <ul class="navbar-nav" *ngIf="isSellerLoggedIn == 'false'">
+            <li class="nav-item">
+              <a *ngIf="isLoggedIn == 'false'" class="nav-link" routerLink="/auth/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a *ngIf="isLoggedIn == 'false'" class="nav-link" routerLink="/auth/signup">signup</a>
+            </li>
+            <li class="nav-item">
+              <a *ngIf="isLoggedIn == 'true'" class="nav-link"  routerLink="/cart">cart</a>
+            </li>
+            <li class="nav-item">
+              <a *ngIf="isLoggedIn == 'true'" class="nav-link" routerLink="/dashboard">dashobard</a>
+            </li>
+            <li class="nav-item">
+              <a *ngIf="isLoggedIn == 'true'" class="nav-link" routerLink="" (click)="logout()">Logout</a>
+            </li>
+          </ul>
+        </div>
 
         <ul class="navbar-nav" *ngIf="sellerLoggedIn">
           <li class="nav-item">

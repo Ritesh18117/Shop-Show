@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-shoes',
@@ -22,6 +23,8 @@ export class AddShoesComponent {
     description:"",
   }
 
+  constructor(private toastr: ToastrService) { }
+
   addQuantity(){
     if(this.size != "" && this.color != "" && this.quantity != ""){
       let quan = {
@@ -38,7 +41,7 @@ export class AddShoesComponent {
 
   onSubmit(){
     console.log(this.product);
-
+    this.toastr.success('Product Added!!', 'Success');
     this.product.brand = "";
     this.product.name = "";
     this.product.quantity = [];

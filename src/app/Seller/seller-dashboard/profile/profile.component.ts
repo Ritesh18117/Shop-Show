@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-profile',
@@ -16,8 +17,10 @@ export class ProfileComponent {
     place:"Delhi"
   }
 
+  constructor(private toastr: ToastrService) { }
 
   onSubmit(){
     console.log(this.profile);
+    this.toastr.success('Product Added!!', 'Success');
   }
 }

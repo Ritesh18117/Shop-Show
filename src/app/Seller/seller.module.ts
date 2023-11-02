@@ -7,6 +7,8 @@ import { ProfileComponent } from './seller-dashboard/profile/profile.component';
 import { AddShoesComponent } from './seller-dashboard/add-shoes/add-shoes.component';
 import { AddedItemsComponent } from './seller-dashboard/added-items/added-items.component';
 import { FormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     SellerRoutingModule,
     SellerAuthModule,
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot()
   ]
 })
 export class SellerModule { }
