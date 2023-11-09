@@ -39,6 +39,14 @@ export class MyAddressComponent {
     console.log(this.address);
     this.myAddress.push(this.address);
     localStorage.setItem('myAddress',JSON.stringify(this.myAddress));
+    // this.address.firstname = "";
+    // this.address.lastname = "";
+    // this.address.address = "";
+    // this.address.address2 = "";
+    // this.address.city = "";
+    // this.address.state = "";
+    // this.address.zipcode = "";
+    // this.address.phone = "";
   }
 
   deleteAddress(ind:number){
