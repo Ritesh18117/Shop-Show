@@ -11,10 +11,13 @@ export class ProfileComponent {
   profile = {
     companyName:"Show Shoes",
     companyType:"E-commerce",
-    website:"show.shoes.com",
+    email:"showshop@showshop.com",
     contact:"6297425557",
     gst:"22AAAAA0000A1Z5",
-    place:"Delhi"
+    address:"Delhi",
+    licenceNumber:"2JBJ3BJ2332B",
+    website:"showshop.com",
+    verified:"false"
   }
 
   constructor(private toastr: ToastrService) { }
